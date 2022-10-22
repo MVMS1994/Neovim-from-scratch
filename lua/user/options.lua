@@ -1,5 +1,7 @@
 local options = {
+  autoindent = true,                        -- pick up indentation from previous line
   backup = false,                          -- creates a backup file
+  binary = false,                          -- by default bin will be false
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -30,7 +32,7 @@ local options = {
   numberwidth = 4,                         -- set number column width to 2 {default 4}
 
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = true,                            -- display lines as one long line
+  wrap = true,                             -- display lines as one long line
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
@@ -45,4 +47,5 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
+-- vim.cmd [[set isKeyword+=\']]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

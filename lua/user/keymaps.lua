@@ -53,7 +53,6 @@ keymap("n", "<C-c>", "yy", opts)
 keymap("n", "<C-z>", "u", opts)
 keymap("n", "<A-z>", "<C-r>", opts)
 
-
 -- Selection
 keymap("n", "<S-Up>", "vk", opts)
 keymap("n", "<S-Down>", "vj", opts)

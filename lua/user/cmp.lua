@@ -44,7 +44,7 @@ local kind_icons = {
   TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
-
+require('cmp-npm').setup({})
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -59,6 +59,10 @@ cmp.setup {
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    },
+    ["<Esc>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
@@ -110,6 +114,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = 'npm', keyword_length = 4 },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },

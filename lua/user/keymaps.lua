@@ -18,6 +18,8 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "X", "<C-v>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<A-Left>", "<C-w>h", opts)
@@ -32,7 +34,6 @@ keymap("n", "<C-A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-A-Right>", ":vertical resize +2<CR>", opts)
 
 -- Manage buffers
-keymap("n", "<C-n>", ":tabnew<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 -- keymap("n", "<C-w>", "") -- find a way to close a tab
 
@@ -41,8 +42,8 @@ keymap("n", "<C-PageDown>", ":bnext<CR>", opts)
 keymap("n", "<C-PageUp>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("n", "<A-Down>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("n", "<C-S-Up>", "<Esc>:m .-2<CR>==g", opts)
+keymap("n", "<C-S-Down>", "<Esc>:m .+1<CR>==g", opts)
 
 -- Remap Cut, Copy and paste keys
 keymap("n", "<C-v>", "p", opts)
@@ -77,8 +78,8 @@ keymap("i", "<C-z>", "<C-O>u", opts)
 keymap("i", "<A-z>", "<C-O><C-r>", opts)
 
 -- Move text up and down
-keymap("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("i", "<C-S-Up>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("i", "<C-S-Down>", "<Esc>:m .+1<CR>==gi", opts)
 
 -- Selection when in insert mode --
 keymap("i", "<S-Up>", "<C-O>vk", opts)
@@ -94,7 +95,6 @@ keymap("i", "<C-PageDown>", "<ESC>:bnext<CR>", opts)
 keymap("i", "<C-PageUp>", "<ESC>:bprevious<CR>", opts)
 
 -- Manage buffers
-keymap("i", "<C-n>", "<Esc>:tabnew<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:w<CR>a", opts)
 
 -- Visual --
@@ -103,8 +103,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-Down>", ":m .+1<CR>==", opts)
-keymap("v", "<A-Up>", ":m .-2<CR>==", opts)
+keymap("v", "<C-S-Down>", ":m .+1<CR>==", opts)
+keymap("v", "<C-S-Up>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Selection when in visual mode
@@ -135,8 +135,8 @@ keymap("v", "<C-PageUp>", "<ESC>:bprevious<CR>", opts)
 -- Move text up and down
 keymap("x", "S-Down", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "S-Up", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<C-S-Down>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<C-S-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
